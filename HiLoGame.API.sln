@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiLoGame.API", "HiLoGame.API\HiLoGame.API.csproj", "{7BF6189A-BA47-4D44-A097-6A9BDBE2F9B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiLoGame.Repository", "HiLoGame.Repository\HiLoGame.Repository.csproj", "{5324B887-1046-48E9-9B8E-219625E6F36E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiLoGame.Service", "HiLoGame.Service\HiLoGame.Service.csproj", "{B6B39257-B495-4089-9079-864D6D83B84D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiLoGame.Model", "HiLoGame.Model\HiLoGame.Model.csproj", "{0B7B49F6-71A6-4CEF-A253-5A158FDD9813}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiLoGame.Crosscutting", "HiLoGame.Crosscutting\HiLoGame.Crosscutting.csproj", "{014BEFBC-5D74-4B97-85F1-10796FCEE825}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiLoGame.IoC", "HiLoGame.IoC\HiLoGame.IoC.csproj", "{62A5DFEF-1689-44C8-A25E-252AD1EAEFF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiLoGame.Tests", "HiLoGame.Tests\HiLoGame.Tests.csproj", "{7E2148C5-E9BB-450F-976A-C364F20FD48A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BF6189A-BA47-4D44-A097-6A9BDBE2F9B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BF6189A-BA47-4D44-A097-6A9BDBE2F9B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BF6189A-BA47-4D44-A097-6A9BDBE2F9B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BF6189A-BA47-4D44-A097-6A9BDBE2F9B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5324B887-1046-48E9-9B8E-219625E6F36E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5324B887-1046-48E9-9B8E-219625E6F36E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5324B887-1046-48E9-9B8E-219625E6F36E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5324B887-1046-48E9-9B8E-219625E6F36E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6B39257-B495-4089-9079-864D6D83B84D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6B39257-B495-4089-9079-864D6D83B84D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6B39257-B495-4089-9079-864D6D83B84D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6B39257-B495-4089-9079-864D6D83B84D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B7B49F6-71A6-4CEF-A253-5A158FDD9813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B7B49F6-71A6-4CEF-A253-5A158FDD9813}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B7B49F6-71A6-4CEF-A253-5A158FDD9813}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B7B49F6-71A6-4CEF-A253-5A158FDD9813}.Release|Any CPU.Build.0 = Release|Any CPU
+		{014BEFBC-5D74-4B97-85F1-10796FCEE825}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{014BEFBC-5D74-4B97-85F1-10796FCEE825}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{014BEFBC-5D74-4B97-85F1-10796FCEE825}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{014BEFBC-5D74-4B97-85F1-10796FCEE825}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62A5DFEF-1689-44C8-A25E-252AD1EAEFF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62A5DFEF-1689-44C8-A25E-252AD1EAEFF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62A5DFEF-1689-44C8-A25E-252AD1EAEFF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62A5DFEF-1689-44C8-A25E-252AD1EAEFF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E2148C5-E9BB-450F-976A-C364F20FD48A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E2148C5-E9BB-450F-976A-C364F20FD48A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E2148C5-E9BB-450F-976A-C364F20FD48A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E2148C5-E9BB-450F-976A-C364F20FD48A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {32826478-EC94-4EC1-9C29-5F18AEC6C637}
+	EndGlobalSection
+EndGlobal

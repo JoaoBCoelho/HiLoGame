@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.19.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HiLoGame.Crosscutting\HiLoGame.Crosscutting.csproj" />
+    <ProjectReference Include="..\HiLoGame.Model\HiLoGame.Model.csproj" />
+  </ItemGroup>
+
+</Project>
