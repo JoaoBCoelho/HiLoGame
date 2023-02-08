@@ -276,6 +276,12 @@ Content-Type: application/json
 }
 ```
 
+## Game Sequence
+Here is an example of a game sequence.
+
+![image](https://user-images.githubusercontent.com/32825344/217408108-9e7c2b36-af2a-4f9c-929c-9e5fed33a27c.png)
+
+
 ## Built with
 .NET 6
 
