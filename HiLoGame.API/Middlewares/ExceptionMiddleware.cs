@@ -1,4 +1,4 @@
-﻿using HiLoGame.Crosscutting.Exceptions;
+﻿using HiLoGame.Common.Exceptions;
 using System.Net;
 using System.Text.Json;
 
@@ -27,7 +27,7 @@ namespace HiLoGame.API.Middlewares
 
         private static Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
-            var code = exception is BusinessException
+            var code = exception is ValidationException
                 ? HttpStatusCode.BadRequest
                 : HttpStatusCode.InternalServerError;
 

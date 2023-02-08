@@ -1,14 +1,14 @@
-﻿using HiLoGame.Crosscutting.Dtos.Request;
-using HiLoGame.Crosscutting.Dtos.Response;
+﻿using HiLoGame.DTO.Request;
+using HiLoGame.DTO.Response;
 
 namespace HiLoGame.Crosscutting.Interfaces
 {
     public interface IGameService
     {
         Task<NewGameResponseDTO> StartNewGameAsync(NewGameRequestDTO newGameDTO);
-        Task<GameResponseDTO> GetGameAsync(Guid id);
-        Task<List<GameResponseDTO>> GetGamesAsync(bool? finished);
-        Task<GameGuessResponseDTO> TakeGameGuessesAsync(GameGuessRequestDTO gameGuessRequest);
-        Task<NewGameResponseDTO> RestartGameAsync(Guid id);
+        Task<GameResponseDTO> GetAsync(int id);
+        Task<List<GameResponseDTO>> GetAllAsync();
+        Task<GuessResponseDTO> TakeGuessAsync(int gameId, GuessRequestDTO guessRequestDTO);
+        Task<NewGameResponseDTO> RestartGameAsync(int id);
     }
 }

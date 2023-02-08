@@ -1,5 +1,4 @@
-﻿using HiLoGame.Model;
-using MongoDB.Driver;
+﻿using HiLoGame.Entities;
 
 namespace HiLoGame.Crosscutting.Interfaces
 {
@@ -7,7 +6,7 @@ namespace HiLoGame.Crosscutting.Interfaces
     {
         Task AddAsync(Game game);
         Task UpdateAsync(Game game);
-        Task<Game> GetAsync(Guid id);
-        Task<List<Game>> GetAllAsync(FilterDefinition<Game> filter);
+        Task<Game> GetAsync(int id);
+        Task<List<Game>> GetAllAsync();
     }
 }

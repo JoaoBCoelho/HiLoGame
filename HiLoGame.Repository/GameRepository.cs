@@ -1,30 +1,26 @@
 ﻿using HiLoGame.Crosscutting.Interfaces;
-using HiLoGame.Model;
-using MongoDB.Driver;
+using HiLoGame.Entities;
+using HiLoGame.Repository.Storage;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 using System.Diagnostics.CodeAnalysis;
 
-namespace HiLoGame.Repository
+namespace HiLoGame.Repository;
+[ExcludeFromCodeCoverage]
+public class GameRepository : BaseRepository<Game>, IGameRepository
 {
-    [ExcludeFromCodeCoverage]
-    public class GameRepository : IGameRepository
+    public GameRepository(Context context) : base(context) { }
+
+    public async Task<Game> GetAsync(int id)
+        => await CreateIncludableQuery().FirstOrDefaultAsync(f => f.Id == id);
+
+    public async Task<List<Game>> GetAllAsync()
+        => await CreateIncludableQuery().ToListAsync();
+
+    private IIncludableQueryable<Game, Player> CreateIncludableQuery()
     {
-        private readonly IMongoCollection<Game> _games;
-
-        public GameRepository(IMongoDatabase database)
-        {
-            _games = database.GetCollection<Game>("Games");
-        }
-
-        public async Task AddAsync(Game game)
-            => await _games.InsertOneAsync(game);
-
-        public async Task<Game> GetAsync(Guid id)
-            => await (await _games.FindAsync(i => i.Id == id)).FirstOrDefaultAsync();
-
-        public async Task<List<Game>> GetAllAsync(FilterDefinition<Game> filter)
-            => await (await _games.FindAsync(filter)).ToListAsync();
-
-        public async Task UpdateAsync(Game game)
-            => await _games.ReplaceOneAsync(g => g.Id == game.Id, game);
+        return _context.Games
+                        .Include(i => i.GamePlayerInfos)
+                        .ThenInclude(i => i.Player);
     }
 }

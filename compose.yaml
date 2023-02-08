@@ -1,0 +1,26 @@
+services:
+  hilogameapi:
+    build: .
+    ports:
+      - "8080:5019"
+    environment:
+      ConnectionString: "Server=sqlserver2;User Id=sa;Password=1q2w3e4r@#$$;Trusted_Connection=False; TrustServerCertificate=True;Encrypt=false;"
+    networks:
+      - hilo-network2
+
+  sqlserver2:
+    image: mcr.microsoft.com/mssql/server
+    user: root
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "1q2w3e4r@#$$"
+    ports:
+      - "1433:1433"
+    volumes:
+      - ~/docker:/var/opt/mssql/data
+    networks:
+      - hilo-network2
+
+networks:
+  hilo-network2:
+    driver: bridge

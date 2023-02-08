@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
+    <PackageReference Include="Moq" Version="4.18.4" />
+    <PackageReference Include="System.Text.Json" Version="7.0.1" />
     <PackageReference Include="xunit" Version="2.4.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -22,9 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controller\" />
-    <Folder Include="Crosscutting\" />
-    <Folder Include="Service\" />
+    <ProjectReference Include="..\HiLoGame.API\HiLoGame.API.csproj" />
+    <ProjectReference Include="..\HiLoGame.Crosscutting\HiLoGame.Crosscutting.csproj" />
+    <ProjectReference Include="..\HiLoGame.Service\HiLoGame.Service.csproj" />
   </ItemGroup>
 
 </Project>

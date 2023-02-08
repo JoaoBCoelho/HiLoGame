@@ -8,7 +8,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HiLoGame.Crosscutting\HiLoGame.Crosscutting.csproj" />
-    <ProjectReference Include="..\HiLoGame.Model\HiLoGame.Model.csproj" />
+    <ProjectReference Include="..\HiLoGame.DTO\HiLoGame.DTO.csproj" />
+    <ProjectReference Include="..\HiLoGame.Entities\HiLoGame.Entities.csproj" />
   </ItemGroup>
 
 </Project>

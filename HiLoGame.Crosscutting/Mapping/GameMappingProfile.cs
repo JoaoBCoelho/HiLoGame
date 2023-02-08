@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using HiLoGame.Crosscutting.Dtos.Request;
-using HiLoGame.Crosscutting.Dtos.Response;
-using HiLoGame.Model;
+using HiLoGame.DTO.Request;
+using HiLoGame.DTO.Response;
+using HiLoGame.Entities;
 
 namespace HiLoGame.Crosscutting.Mapping
 {
@@ -10,43 +10,53 @@ namespace HiLoGame.Crosscutting.Mapping
         public GameMappingProfile()
         {
             CreateMap<NewGameRequestDTO, Game>()
-                .ForMember(dest => dest.GameInstances, opt => opt.MapFrom(src =>
-                    src.Players.Select(name =>
-                    new GameInstance
+                .ForMember(dest => dest.Round, opt => opt.MapFrom(src => 1))
+                .ForMember(dest => dest.GamePlayerInfos, opt => opt.MapFrom(src =>
+                    src.Players.Select(id =>
+                    new GamePlayerInfo
                     {
-                        Id = Guid.NewGuid(),
-                        PlayerName = name,
+                        PlayerId = id,
                         MisteryNumber = new Random().Next(src.MinValue, src.MaxValue + 1)
                     })
                 ));
 
             CreateMap<Game, Game>()
                 .ForMember(dest => dest.Id, opt => opt.Ignore())
-                .ForMember(dest => dest.Attempts, opt => opt.Ignore())
-                .ForMember(dest => dest.Finished, opt => opt.Ignore())
-                .ForMember(dest => dest.GameInstances, opt => opt.MapFrom(src =>
-                    src.GameInstances.Select(instance =>
-                    new GameInstance
+                .ForMember(dest => dest.Round, opt => opt.MapFrom(src => 1))
+                .ForMember(dest => dest.Status, opt => opt.Ignore())
+                .ForMember(dest => dest.GamePlayerInfos, opt => opt.MapFrom(src =>
+                    src.GamePlayerInfos.Select(playerInfo =>
+                    new GamePlayerInfo
                     {
-                        Id = Guid.NewGuid(),
-                        PlayerName = instance.PlayerName,
+                        PlayerId = playerInfo.PlayerId,
                         MisteryNumber = new Random().Next(src.MinValue, src.MaxValue + 1),
                         Winner = false
                     })
                 ));
 
-            CreateMap<Game, Game>()
-                .ForMember(dest => dest.GameInstances, opt => opt.MapFrom(src => src.GameInstances));
-
-            CreateMap<GameInstance, PlayerDTO>()
-                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.PlayerName));
-
-            CreateMap<GameInstance, PlayerResponseDTO>()
-                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.PlayerName))
-                .ForMember(dest => dest.Winner, opt => opt.MapFrom(src => src.Winner));
+            CreateMap<Game, NewGameResponseDTO>()
+                .ForMember(dest => dest.Players, opt => opt.MapFrom(src =>
+                    src.GamePlayerInfos.Select(playerInfo =>
+                    new NewGamePlayerResponseDTO
+                    {
+                        Id = playerInfo.Player.Id,
+                        Name = playerInfo.Player.Name
+                    })
+                ));
 
             CreateMap<Game, GameResponseDTO>()
-                .ForMember(dest => dest.Players, opt => opt.MapFrom(src => src.GameInstances));
+                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()))
+                .ForMember(dest => dest.GamePlayerInfos, opt => opt.MapFrom(src =>
+                    src.GamePlayerInfos.Select(playerInfo =>
+                    new GamePlayerInfoDTO
+                    {
+                        GameId = src.Id,
+                        PlayerId = playerInfo.PlayerId,
+                        PlayerName = playerInfo.Player.Name,
+                        Attempts = playerInfo.Attempts,
+                        Winner = playerInfo.Winner
+                    })
+                ));
         }
     }
 }

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -13,7 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HiLoGame.Model\HiLoGame.Model.csproj" />
+    <ProjectReference Include="..\HiLoGame.DTO\HiLoGame.DTO.csproj" />
+    <ProjectReference Include="..\HiLoGame.Entities\HiLoGame.Entities.csproj" />
   </ItemGroup>
 
 </Project>

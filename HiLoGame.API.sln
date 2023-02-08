@@ -9,13 +9,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiLoGame.Repository", "HiLo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiLoGame.Service", "HiLoGame.Service\HiLoGame.Service.csproj", "{B6B39257-B495-4089-9079-864D6D83B84D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiLoGame.Model", "HiLoGame.Model\HiLoGame.Model.csproj", "{0B7B49F6-71A6-4CEF-A253-5A158FDD9813}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiLoGame.Entities", "HiLoGame.Entities\HiLoGame.Entities.csproj", "{0B7B49F6-71A6-4CEF-A253-5A158FDD9813}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiLoGame.Crosscutting", "HiLoGame.Crosscutting\HiLoGame.Crosscutting.csproj", "{014BEFBC-5D74-4B97-85F1-10796FCEE825}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiLoGame.IoC", "HiLoGame.IoC\HiLoGame.IoC.csproj", "{62A5DFEF-1689-44C8-A25E-252AD1EAEFF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiLoGame.Tests", "HiLoGame.Tests\HiLoGame.Tests.csproj", "{7E2148C5-E9BB-450F-976A-C364F20FD48A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiLoGame.Tests", "HiLoGame.Tests\HiLoGame.Tests.csproj", "{7E2148C5-E9BB-450F-976A-C364F20FD48A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiLoGame.DTO", "HiLoGame.DTO\HiLoGame.DTO.csproj", "{E86925DF-A0E5-4E5D-A403-6FBC853FE6ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiLoGame.Common", "HiLoGame.Common\HiLoGame.Common.csproj", "{6DD803D9-B2B3-425A-A092-637D0C0C3F91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{7E2148C5-E9BB-450F-976A-C364F20FD48A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E2148C5-E9BB-450F-976A-C364F20FD48A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E2148C5-E9BB-450F-976A-C364F20FD48A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E86925DF-A0E5-4E5D-A403-6FBC853FE6ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E86925DF-A0E5-4E5D-A403-6FBC853FE6ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E86925DF-A0E5-4E5D-A403-6FBC853FE6ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E86925DF-A0E5-4E5D-A403-6FBC853FE6ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DD803D9-B2B3-425A-A092-637D0C0C3F91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DD803D9-B2B3-425A-A092-637D0C0C3F91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DD803D9-B2B3-425A-A092-637D0C0C3F91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DD803D9-B2B3-425A-A092-637D0C0C3F91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

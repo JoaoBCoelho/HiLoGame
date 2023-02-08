@@ -1,13 +1,15 @@
 using HiLoGame.API.Middlewares;
 using HiLoGame.IoC;
+using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
-var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+var configuration = new ConfigurationBuilder().AddEnvironmentVariables().Build();
 
 builder.Services.ConfigureServices();
 builder.Services.ConfigureRepositories();
+
+builder.Services.ConfigureDbContext(configuration["ConnectionString"]);
 builder.Services.ConfigureAutoMapper();
-builder.Services.ConfigureMongoDb(configuration["Database:MongoDBConnectionString"], configuration["Database:DatabaseName"]);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
